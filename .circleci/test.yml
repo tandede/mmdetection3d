@@ -71,7 +71,7 @@ jobs:
       - run:
           name: Build and install
           command: |
-            python setup.py develop
+            python setup.py develop --no-deps
       - run:
           name: Run unittests
           command: |
@@ -124,7 +124,7 @@ jobs:
       - run:
           name: Build and install
           command: |
-            docker exec mmdet3d python setup.py develop
+            docker exec mmdet3d python setup.py develop --no-deps
       - run:
           name: Run unittests
           command: |
