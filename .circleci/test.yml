@@ -63,7 +63,7 @@ jobs:
       - run:
           name: Install mmdet3d dependencies
           command: |
-            pip install git+ssh://git@github.com/open-mmlab/mmengine.git@main
+            pip install 'mmengine >= 0.8.0, < 1.0.0'
             pip install -U openmim
             mim install 'mmcv >= 2.0.0rc4, < 2.2.0'
             pip install git+ssh://git@github.com/open-mmlab/mmdetection.git@dev-3.x
@@ -154,7 +154,7 @@ workflows:
           name: minimum_version_cpu
           torch: 1.8.1
           torchvision: 0.9.1
-          python: 3.8.16
+          python: 3.7.4 # The lowest python 3.7.x version available on CircleCI images
           requires:
             - lint
       - build_cpu:
