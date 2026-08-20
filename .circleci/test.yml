@@ -71,7 +71,7 @@ jobs:
       - run:
           name: Build and install
           command: |
-            pip install --no-build-isolation -e .
+            python setup.py develop
       - run:
           name: Run unittests
           command: |
@@ -124,7 +124,7 @@ jobs:
       - run:
           name: Build and install
           command: |
-            docker exec mmdet3d pip install --no-build-isolation -e .
+            docker exec mmdet3d python setup.py develop
       - run:
           name: Run unittests
           command: |
