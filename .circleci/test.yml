@@ -66,7 +66,7 @@ jobs:
             pip install 'mmengine >= 0.8.0, < 1.0.0'
             pip install -U openmim
             mim install 'mmcv >= 2.0.0rc4, < 2.2.0'
-            pip install git+ssh://git@github.com/open-mmlab/mmdetection.git@dev-3.x
+            pip install --no-build-isolation git+ssh://git@github.com/open-mmlab/mmdetection.git@dev-3.x
             pip install -r requirements/tests.txt
       - run:
           name: Build and install
