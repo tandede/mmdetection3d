@@ -67,7 +67,7 @@ jobs:
             pip install -U openmim
             mim install 'mmcv >= 2.0.0rc4, < 2.2.0'
             pip install --no-build-isolation git+ssh://git@github.com/open-mmlab/mmdetection.git@dev-3.x
-            pip install -r requirements/tests.txt
+            pip install -r requirements/runtime.txt -r requirements/tests.txt
       - run:
           name: Build and install
           command: |
@@ -120,7 +120,7 @@ jobs:
             docker exec mmdet3d pip install -U openmim
             docker exec mmdet3d mim install 'mmcv >= 2.0.0rc4'
             docker exec mmdet3d pip install -e /mmdetection
-            docker exec mmdet3d pip install -r requirements/tests.txt
+            docker exec mmdet3d pip install -r requirements/runtime.txt -r requirements/tests.txt
       - run:
           name: Build and install
           command: |
